@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet"  href="utilities.css">
+
+        <title>Utilities</title>
+    </head>
+    
+    <body onload="loadTasks()">
+        <script>
+            function loadTasks(){
+                firstTime();
+                getLayout();
+                checkQL();
+               // getTheme();
+                setWP(localStorage.getItem("WPID"));
+            }
+        </script>
+        <div class="loadingscreen">
+            <div class='overlay'>
+                <div class='spinner center'>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                    <div class='spinner-blade'></div>
+                </div>
+            </div>
+        </div>
+        <div class="backgroundcover"></div>
+        <div class="backgroundcover2"></div>
+        <div class='popup-back'>
+        </div>
+        
+        <div id="alldivs">
+
+                
+<!--WIKIPEDIA-->
+                <div class="normalbox" id="1container">
+                    <div class='logoHolder'>
+                        <img class= "wikipedia" src="images/wikipedia.png" draggable="false"/>
+                    </div>
+                    <div class='searchContainer'>
+                        <form class="form" action="https://en.wikipedia.org">
+                        <input class="searchbar" name="search" type="text" placeholder="Enter a word...">
+                        <input type="submit" class="searchbutton" autocomplete="off" name="searchbutton" value="Search" id="search_text">
+                    </form>
+                    </div>   
+                </div>
+                
+<!--DICTIONARY CONTAINER-->
+                <div class="normalbox" id="2container" draggable="false">
+                    <div class='logoHolder'>
+                        <img class= "dictionary" src="images/Dictionary.png" draggable="false"/>
+                    </div>
+                    <div class='searchContainer'>
+                        <form class="form" method="get" action="http://dictionary.reference.com/search">
+                            <input class="searchbar" name="q" type="text" autocomplete="off" placeholder="Enter a word...">
+                            <input type="submit" class="searchbutton" autocomplete="off" name="searchbutton" value="Search" id="search_text">
+                        </form>
+                    </div>
+                </div>
+                
+<!--GOOGLE-->
+            <div class="normalbox" id="3container" draggable="false">
+                <div class='logoHolder'>
+                    <img class= "google" src="images/Google.png" draggable="false"/>
+                </div>
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://mail.google.com/mail/u/0/?pli=1#inbox">
+                        <input type="submit" name="q" class="leftButton" id="gmail" value="Gmail" >
+                    </form>
+                    <form class="googlehiddenform" action="https://google.com/news">
+                        <input type="submit" name="q" class="middleButton" id="news" value="News" >
+                    </form>
+                    <form class="googlehiddenform" action="https://translate.google.com">
+                        <input type="submit" class="rightButton" id="translate" value="Translate">
+                    </form>
+                </div>
+
+                <div class='searchContainer'>
+                    <form class="form" action="https://google.com/search">
+                        <input type="text" name="q" class="input" autocomplete="off" placeholder="Search the web...">
+                        <input type="submit" name="searchbutton" value="Search" id="search_text">
+                    </form>
+                </div>
+            </div>
+                
+<!-- YAHOO -->
+            <div class="normalbox" id="4container">
+                <div class='logoHolder'>
+                    <img class="yahoo" src="images/Yahoo.png" draggable="false"/>
+                </div>
+                <div class='searchContainer'>
+                    <form class="form" method="get" action="https://search.yahoo.com/search">
+                        <input type="text" name="p" placeholder="Search the web..." class="searchbar" autocomplete="off">
+                        <input type="submit" class="searchbutton" value="Search" id="search_text">
+                    </form>
+                </div>
+            </div>
+  
+
+<!--REDDIT CONTAINER-->
+            <div class="normalbox" id="6container">
+                <img class="redditImg" src="images/reddit.png"/>  
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://www.reddit.com/">
+                                <input type="submit" name="q" class="leftButton" value="Front Page" >
+                    </form>
+                    <form class="googlehiddenform" action="https://www.reddit.com/subreddits">
+                                <input type="submit" name="q" class="middleButton" id="subreddits" value="My Subreddits" >
+                    </form>
+                </div>
+                <div class='searchContainer'>
+                    <form class="form" action="https://www.reddit.com/subreddits/search?q=">        
+                        <input type="text" name="q" class="searchbar" autocomplete=off placeholder="Enter a Subreddit"> 
+                        <input type="submit" class="searchbutton" value="Search" id="search_text">
+                    </form>
+                </div>
+            </div>
+<!--FACEBOOK CONTAINER-->
+            <div class="normalbox" id="7container">
+                <img class="facebookImg" src="images/facebook.png"/>    
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://www.facebook.com/">
+                            <input type="submit" name="q" class="leftButton" value="Wall" >
+                    </form>
+                    <form class="googlehiddenform" action="https://www.facebook.com/messages/">
+                            <input type="submit" name="q" class="middleButton" value="Messages" >
+                    </form>
+                    <form class="googlehiddenform" id="friends" action="https://www.facebook.com/find-friends/browser/">
+                        <input type="submit" class="rightButton" id="translate" value="Friends">
+                    </form>
+                </div>
+                <div class='searchContainer'>
+                    <form class="form" action="https://www.facebook.com/search/top/?q=">
+                        <input type="text" name="q" class="searchbar" autocomplete=off placeholder="Search Facebook">
+                        <input type="submit" class="searchbutton" value="search" id="search_text">
+                    </form>
+                </div>
+            </div>
+<!--SOUNDCLOUD-->
+            <div class="normalbox" id="8container">
+                <img id="SCdownloadShow" src="images/Icons/Download.png"/>
+                <img class="soundcloud" src="images/soundcloud.png"/>
+                <div class='searchContainer'>
+                    <form class="form" action="https://soundcloud.com/search">
+                        <input type="text" name="q" class="searchbar" autocomplete="off" placeholder="Enter a song name...">
+                        <input type="submit" class="searchbutton" name="" value="Search" id="search_text">
+                    </form>
+                </div>
+            </div>
+                    
+            <div class="normalbox" id="SCdownloadcontainer">
+                <img class="downloadHide" id="SC" src="images/Icons/Close.png"/>
+                <table class="soundclouddownloader">
+                    <tr>
+                        <td>
+                            <img class="youmagictube" src="images/soundcloud.png"/>  <!--SOUNDCLOUD IMAGE-->
+                        </td>
+                        <td>
+                            <p class="youmagictube2">Downloader</p>
+                        </td>
+                    </tr>
+                </table> 
+                <div class='searchContainer'>
+                    <form class="form" action="http://streampocket.com/?stream=">
+                    <input id="videodownload" type="text" name="steam" placeholder="Enter Soundcloud URL">
+                    <input type="submit" name="searchbutton" value="Search">
+                </form>
+                </div>
+            </div>
+             
+<!--AMAZON-->
+            <div class="normalbox" id="9container">
+                <img class="amazon" src="images/amazon.png"/>
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://www.amazon.com/gp/css/homepage.html/ref=nav_youraccount_ya">
+                        <input type="submit" name="q" class="leftButton" id="account" value="Account" >
+                    </form>
+                </div>
+                <div class='searchContainer'>
+                    <form method="get" class="form" action="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=">
+                        <input name="keywords" type="text" autocomplete="off" value="" placeholder="Enter an  item...">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+            </div>
+<!--EBAY-->
+<!--
+            <div class="normalbox" id="10container">
+                <img class="amazon" src="images/Ebay.png"/>
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://www.amazon.com/gp/css/homepage.html/ref=nav_youraccount_ya">
+                        <input type="submit" name="q" class="leftButton" id="account" value="Account" >
+                    </form>
+                </div>
+                <div class='searchContainer'>
+                    <form method="get" class="form" action="https://www.ebay.com/">
+                        <input type="text" maxlength="64" name="searchString" size="52" title="Search the help pages" onfocus="ebHelpSearchFocus(this, sblackTxtClass);" onkeyup="ebHelpSearchChange(this);" class="blackTxtBox" style="vertical-align:middle;">
+                        <input class="searchbar" name="keywords" type="text" value="" placeholder="Enter an item...">
+                        <input class="searchbutton" type="submit" value="Search">
+                    </form>
+                </div>
+            </div>
+-->
+<!--YOUTUBE-->
+            <div class="normalbox" id="11container">
+                <img id="YTdownloadShow" src="images/Icons/Download.png"/>
+                <img class="youtube" src="images/youtube.png"/>
+                <div class="buttonHolder">
+                    <form class="googlehiddenform" action="https://youtube.com">
+                        <input type="submit" name="q" class="leftButton" id="account" value="Home" >
+                    </form>
+                </div>
+                <div class='searchContainer'>
+                    <form class="form" action="https://www.youtube.com/results?">
+                        <input type="text" autocomplete="off" name="q" class="searchbar" placeholder="Enter a video...">
+                        <input type="submit" class="searchbutton" name="searchbutton" value="Search" id="search_text">
+                    </form>
+                </div>
+                <script>
+                     $( "#YTdownloadShow").click(function() {
+                            showYTDownloader(); 
+                        });
+                    function showYTDownloader(){
+                        $("#11container").css("display", "none");
+                        $("#YTdownloadcontainer").css("display", "block");
+                    }
+                     $( "#SCdownloadShow").click(function() {
+                            showSCDownloader(); 
+                        });
+                    function showSCDownloader(){
+                        $("#8container").css("display", "none");
+                        $("#SCdownloadcontainer").css("display", "block");
+                    }
+
+
+                </script>
+ <!--DOWNLOAD CONTAINER-->                   
+            </div>
+                
+            <div class="normalbox" id="YTdownloadcontainer">
+                <img class="downloadHide" id="YT" src="images/Icons/Close.png"/>
+                <table class="youtubedownloader">
+                    <tr>
+                        <td>
+                            <img class="youmagictube" src="images/youtube.png"/>
+                        </td>
+                        <td>
+                        <p class="youmagictube2">Downloader</p>
+                        </td>
+                    </tr>
+                </table>        
+                <div class='searchContainer'>   
+                    <form class="form" action="http://www.save-video.com/download.php?">
+                        <input type="text" autocomplete="off" name="q" class="searchbar" placeholder="Enter a video...">
+                        <input type="submit" class="searchbutton" name="searchbutton" value="Search" id="search_text">
+                    </form>
+                </div>
+                <script>
+                    $( "#YT").click(function() {
+                        hideYTDownloader(); 
+                    });
+                    function hideYTDownloader(){
+                        $("#11container").css("display", "block");
+                        $("#YTdownloadcontainer").css("display", "none");
+                    }
+                    $( "#SC").click(function() {
+                        hideSCDownloader(); 
+                    });
+                    function hideSCDownloader(){
+                        $("#8container").css("display", "block");
+                        $("#SCdownloadcontainer").css("display", "none");
+                    }
+                </script>
+            </div>
+            <div class="longboxHolder">
+                <div class="longbox">
+                    <form name="calculator" > 
+                        <input class="display" type="textfield" name="ans" value="" placeholder='0' readonly>
+                        <div class="calcRow">
+                            <input class="calcButton" id="reset" type="reset" value="Clear">
+                            <input class="calcButton" id="operand" type="button" value="/" onClick="document.calculator.ans.value+='/'">
+                        </div>
+                        <div class='calcRow'>
+                            <input class="calcButton" id="button7" type="button" value="7" onClick="document.calculator.ans.value+='7'">
+                            <input class="calcButton" type="button" value="8" onClick="document.calculator.ans.value+='8'">
+                            <input class="calcButton" type="button" value="9" onClick="document.calculator.ans.value+='9'">
+                            <input class="calcButton" id="operand" type="button" value="X" onClick="document.calculator.ans.value+='*'">
+                        </div>
+                        <div class='calcRow'>
+                            <input type="button" class="calcButton" id="button4" value="4" onClick="document.calculator.ans.value+='4'">
+                             <input type="button" class="calcButton" value="5" onClick="document.calculator.ans.value+='5'">
+                             <input type="button" class="calcButton" value="6" onClick="document.calculator.ans.value+='6'">
+                             <input type="button" class="calcButton" id="operand" value="-" onClick="document.calculator.ans.value+='-'">
+                        </div>
+                        <div class='calcRow'>
+                            <input class="calcButton" id="button1" type="button" value="1" onClick="document.calculator.ans.value+='1'">
+                            <input class="calcButton" type="button" value="2" onClick="document.calculator.ans.value+='2'">
+                            <input class="calcButton" type="button" value="3" onClick="document.calculator.ans.value+='3'">
+                            <input class="calcButton" id="operand" type="button" value="+" onClick="document.calculator.ans.value+='+'">
+                        </div>
+                        <div class='calcRow'>
+                            <input class="calcButton" id='zero' type="button" value="0" onClick="document.calculator.ans.value+='0'">
+                            <input class="calcButton" id='period' type="button" value="."  onClick="document.calculator.ans.value+='.'">
+                            <input class="calcButton" id="equalSign" type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+                        </div>
+                    </form>
+                </div>
+ <!--WEATHER-->    
+                <div class="longbox" id="weathercontainer">
+                    <img id="settingsOpen" src="images/Icons/Settings.png"/>
+                    <div  id="weather"></div>
+                    <img class="WDIcon" src="images/Icons/Weather.png"/>
+                    <div id="WDContainer">
+                        <p>Click the gear icon in the top corner to adjust settings.</p>
+                    </div>
+                </div>
+<!--
+                <div class="longbox" id="prefscontainer">
+                    <h2>Settings</h2>
+                    <div>
+                        <p id="prefs-WPInfo">Current Wallpaper: </p>
+                    </div>
+                    <script>
+                        if (localStorage.getItem("WPType")=="preset"){
+                            $("#prefs-WPInfo").html("<p>yes</p>");
+                        }
+                    </script>
+                </div>
+-->
+                <div class="longbox" id="quicklinkscontainer">
+                    <div class="quicklinkshead">
+                        <p class="quicklinkstext">Quick Links</p>
+                    </div>
+                    <div id="QLNotification">
+                        <p>Quick links are shortcuts to your favorite websites. To get started, click the settings button inside the weather pane.</p>
+                    </div>
+                    <a class="QLButton" id="Reddit" href="https://reddit.com">
+                        <img class="QLImg" src="images/reddit.png">  
+                    </a>
+                    <a class="QLButton" id="Facebook" href="https://facebook.com">
+                        <img class="QLImg" src="images/facebook.png">  
+                    </a>
+                    <a class="QLButton" id="Twitter" href="https://twitter.com">
+                        <img class="QLImg" src="images/twitter.png">  
+                    </a>
+                    <a class="QLButton" id="Pinterest" href="https://pinterest.com">
+                        <img class="QLImg" src="images/Icons/QuickLinks/Pinterest.png">  
+                    </a>
+                    <a class="QLButton" id="Tumblr" href="https://tumblr.com">
+                        <img class="QLImg" src="images/Icons/QuickLinks/Tumblr.png">  
+                    </a>
+                    <a class="QLButton" id="Netflix" href="https://netflix.com">
+                        <img class="QLImg" src="images/netflix.png">  
+                    </a>
+                    <a class="QLButton" id="Hulu" href="https://hulu.com">
+                        <img class="QLImg" src="images/Icons/QuickLinks/Hulu.png">  
+                    </a>
+                    <a class="QLButton" id="Amazon" href="https://amazon.com">
+                    <img class="QLImg" src="images/Icons/QuickLinks/amazon.png">  
+                    </a>
+                    <a class="QLButton" id="ESPN" href="https://espn.go.com">
+                        <img class="QLImg" src="images/Icons/QuickLinks/ESPN.png">  
+                    </a>
+                </div>
+            </div>
+        </div> <!--ALLDIVS-->
+        <script>
+//             $(".normalbox").draggable();
+        </script>
+<!--SETTINGS-->
+        <div class="settingscontainer">
+            <img class="closebutton" src="images/Icons/Close.png"/>
+            <p class="settingshead">Settings</p>         
+            <div class="settingsdivider">
+<!--SETTINGS BUTTONS-->
+                <div class="SBcontainer">
+                    <div class="settingsButton" id="wpchanger">
+                        <p class="CB">Background</p></div>
+                    <div class="settingsButton" id="appLayoutButton">
+                        <p class="CB">App Layout</p></div>
+                    <div class="settingsButton" id="themeButton">
+                        <p class="CB">Theme</p>
+                    </div>
+                    <div class="settingsButton" id="quickLinksButton">
+                        <p class="CB">Quick Links</p>
+                    </div>
+                   <!--  <div class="settingsButton" id="weatherButton">
+                        <p class="CB">Weather</p>
+                    </div> -->
+                    <script>
+//                            $(".QLButton").click(function() {
+//                                window.location = $(this).find("a").attr("href"); 
+//                                return false;
+//                            });
+                        $('.closebutton, .backgroundcover2').click(function(){
+                                settingsClose()
+                        });
+                        function settingsClose(){
+                            $(".settingscontainer").fadeOut("fast",      function()  {
+                                $( "#alldivs" ).fadeIn("fast");                 
+                            });
+                        }
+                        function settingsOpen(){
+                            $("#alldivs").hide().delay(300);
+                            $( ".settingscontainer" ).fadeIn();   
+                        }
+
+
+//// SETTINGS HIGHLIGHTS 
+                        $("#wpchanger, #appLayoutButton, #themeButton, #quickLinksButton, #weatherButton").click(function(){ $(".settingsButton").removeClass("highlight").delay("300");
+                            $(this).addClass("highlight");
+                        });
+// SETTINGS BUTTONS                        
+                        $("#wpchanger").click(function(){
+                            $(".settingsPane").hide().delay('100');
+                            $("#background").show();
+                        });
+                        $("#appLayoutButton").click(function(){
+                            $(".settingsPane").hide().delay('100');
+                            $("#appLayoutPane").show().css("display","flex");
+                        });
+                        $("#themeButton").click(function(){
+                            $(".settingsPane").hide().delay('100');
+                            $("#themePane").show();
+                        });
+                        $("#quickLinksButton").click(function(){
+                            $(".settingsPane").hide().delay('100');
+                            $("#quicklinksPane").show();
+                        });
+                        $("#weatherButton").click(function(){
+
+                            $(".settingsPane").hide().delay('100');
+                            $("#weatherPane").show();
+                        });
+                    </script>
+                </div>
+
+                <div class="settingsPane" id='background'>
+                    <div class="wpcontainer">
+                        <div class="wpdesktop">
+                         <p class="settingsPaneHead">Preset Wallpapers</p>
+                            <img class="pWallpaper" id ="1wp" src="images/Icons/WPicons/wp1.png"/>
+                            <img class="pWallpaper" id="2wp" src="images/Icons/WPicons/wp2.png"/>
+                            <img class="pWallpaper" id="3wp" src="images/Icons/WPicons/wp3.jpg"/>
+                            <img class="pWallpaper" id="4wp" src="images/Icons/WPicons/wp4.jpg"/>
+                            <img class="pWallpaper" id="5wp" src="images/Icons/WPicons/wp5.jpg"/>
+                            <img class="pWallpaper" id="6wp" src="images/Icons/WPicons/wp6.jpg"/>
+
+                            <p class="settingsPaneHead">Preset Wallpapers</p>
+                            <div class="uploadWP">
+                                <div>
+                                    <img class="wphover" id="uploadButton" src="images/Icons/Upload2.png"/>
+
+                                    <img class="wphover" id="eraseWP" src="images/Icons/Reset.png"/>
+                                </div>
+                                <div class="uploadBox" id="currentWP">
+                                   <p class="uploadWPText">Use your own wallpaper</p>    
+                                </div>
+                                <div class="wphover" id="wpoptions">
+                                    <div class="wpbutton" id="cover">Cover</div>
+                                    <div class="wpbutton" id="contain">Contain</div>
+                                    <div class="wpbutton" id="stretch">Stretch</div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // DESKTOP WALLPAPERS
+                        $(".pWallpaper").click(function(){
+                            var WPID = parseInt($(this).attr("id"));
+                            localStorage.setItem("WPType","preset");
+                            localStorage.setItem("WPID",WPID);
+                            $(".uploadWP").css("background","url("+WPID+")");
+                            setWP(WPID);
+                        });
+                        $("#uploadButton").click(function(){
+                            var WPID = window.prompt("Please enter a picture URL");
+                            localStorage.setItem("WPType","custom");
+                            localStorage.setItem("WPID",WPID);
+                            if (WPID != null){
+                                localStorage.setItem("WPURL",WPID);
+                                setWP(WPID);
+                            }
+                        });
+                        $("#eraseWP").click(function(){
+                            localStorage.setItem("WPType",null);
+                            getTime();
+                        });
+                        $("#currentWP").click(function(){
+                            if (localStorage.getItem("WPURL") != null){
+                                var WPURL = localStorage.getItem("WPURL")
+                                localStorage.setItem("WPType","custom");
+                                localStorage.setItem("WPID",WPURL);
+                                setWP(localStorage.getItem("WPURL"));
+                            }
+                        });
+                        $("#cover").click(function(){
+                                $("body").css({backgroundSize: "cover"});
+                        });
+                        $("#contain").click(function(){
+                                $("body").css({backgroundSize: "contain"});
+                        });
+                        $("#stretch").click(function(){
+                                $("body").css({backgroundSize: "100% 100%"});
+                        }); 
+
+                        function setWP(WPID){  
+                            if (localStorage.getItem("WPType")=="preset"){
+                                WPID = localStorage.getItem("WPID");
+                                $("body").css("background","url(images/Wallpapers/wp"+WPID+".jpg) no-repeat center center fixed");
+                            }
+                            else if (localStorage.getItem("WPType")=="custom"){
+                                WPID = localStorage.getItem("WPID");
+                                $("body").css("background","url("+WPID+") no-repeat center center fixed");
+                                $("#currentWP").css("background","url("+WPID+")");
+                            }
+                            else if (localStorage.getItem("WPType")=="theme"){
+                                WPID = localStorage.getItem("theme");
+                                if (WPID == "space"){
+                                    $("body").css("background","url(images/Wallpapers/"+WPID+".gif) no-repeat center center fixed");
+                                    setTheme(WPID);
+                                }
+                                else if (WPID == "tron"){
+                                    $("body").css("background","url(images/Wallpapers/"+WPID+".gif) no-repeat center center fixed");
+                                    setTheme(WPID);
+                                }
+
+                            }
+                            else{
+                                getTime();
+                            }
+                            $("body").css("background-size","cover");
+                            if (localStorage.getItem("WPURL") != null){
+                                $("#currentWP").css("background","url("+localStorage.getItem("WPURL")+")");
+                            }
+                        }
+
+                        function getTime(){          
+                            var currentTime = new Date().getHours();
+                            if (0 <= currentTime && currentTime < 10) {
+                                $("body").css("background","url(images/Wallpapers/Morning.jpg) no-repeat center center fixed")
+                            }
+                            else if (10 <= currentTime && currentTime < 14){
+                                $("body").css("background","url(images/Wallpapers/Noon.jpg) no-repeat center center fixed")
+                            }
+                            else if (14 <= currentTime && currentTime < 18){
+                                $("body").css("background","url(images/Wallpapers/Afternoon.jpg) no-repeat center center fixed")
+                            }   
+                            else if (18 <= currentTime && currentTime < 24){
+                                $("body").css("background","url(images/Wallpapers/Evening.jpg) no-repeat center center fixed")
+                            }  
+                            else {
+                                $("body").css("background","url(images/Wallpapers/Night.jpg) no-repeat center center fixed")
+                            }
+                        }      
+                    </script>
+                </div>
+
+                <!--CHANGE SEARCH ENGINE-->
+                <div class="settingsPane" id="appLayoutPane">
+<!--                        <div class="SEcontainer">-->
+                    <p class="settingsPaneHead">Choose Which Apps Are Visible</p>
+                    <div class="appContainer">
+                        <div class="appSelector" id="1app">
+                            <img src="images/wikipedia.png">
+                        </div> 
+                        <div class="appSelector" id="2app">
+                            <img src="images/Dictionary.png">
+                        </div>
+                        <div class="appSelector" id="3app">
+                            <img src="images/Google.png">
+                        </div>
+                        <div class="appSelector" id="4app">
+                            <img src="images/Yahoo.png">
+                        </div>
+<!--
+                        <div class="appSelector" id="5app">
+                            <img src="images/Kickass.png">
+                        </div>
+-->
+                        <div class="appSelector" id="6app">
+                            <img src="images/reddit.png">
+                        </div>
+                        <div class="appSelector" id="7app">
+                            <img src="images/facebook.png">
+                        </div>
+                        <div class="appSelector" id="8app">
+                            <img src="images/soundcloud.png">
+                        </div>
+                        <div class="appSelector" id="9app">
+                            <img src="images/amazon.png">
+                        </div>
+                        <div class="appSelector" id="10app">
+                            <img src="images/Ebay.png">
+                        </div>
+                        <div class="appSelector" id="11app">
+                            <img src="images/youtube.png">
+                        </div> 
+                    </div>
+                    <div class="pageSize">
+                        <div class="button" id="PerRow3">
+                            3-Row
+                        </div>
+                        <div class="button" id="PerRow4">
+                            4-Row
+                        </div>
+                        <script>
+                            $("#PerRow4").click(function(){
+                                $("#alldivs").css("max-width","75em");
+                                $(".appPreview").css("width", "23em");
+                            });
+                            $("#PerRow3").click(function(){
+                                $("#alldivs").css("max-width","60em");
+                                $(".appPreview").css("width", "20em");
+                            });
+                        </script>
+                    </div>
+                    <div class="appPreview">
+                        <div class="normalPBox" id="1PBox">
+                            <img src="images/Icons/appIcons/Wikipedia.png">
+                        </div>
+                        <div class="normalPBox" id="2PBox">
+                            <img src="images/Icons/appIcons/Dictionary.png">
+                        </div>
+                        <div class="normalPBox" id="3PBox">
+                            <img src="images/Icons/appIcons/Google.png">
+                        </div>
+                        <div class="normalPBox" id="4PBox">
+                            <img src="images/Icons/appIcons/Yahoo.png">
+                        </div>
+<!--
+                        <div class="normalPBox" id="5PBox">
+                            <img src="images/Kickass.png">
+                        </div>
+-->
+                        <div class="normalPBox" id="6PBox">
+                            <img src="images/Icons/appIcons/Reddit.png">
+                        </div>
+                        <div class="normalPBox" id="7PBox">
+                            <img src="images/Icons/appIcons/Facebook.png">
+                        </div>
+                        <div class="normalPBox" id="8PBox">
+                            <img src="images/Icons/appIcons/Soundcloud.png">
+                        </div>
+                        <div class="normalPBox" id="9PBox">
+                            <img src="images/Icons/appIcons/Amazon.png">
+                        </div>
+                        <div class="normalPBox" id="10PBox">
+                            <img src="images/Icons/appIcons/Ebay.png">
+                        </div>
+                        <div class="normalPBox" id="11PBox">
+                            <img src="images/Icons/appIcons/Youtube.png">
+                        </div>
+                        <div class="longPBox" id="1LBox">
+                            +-/*
+                        </div>
+                        <div class="longPBox" id="2LBox">
+                            <img src="images/Icons/Weather.png">
+                        </div>
+                        <div class="longPBox" id="3LBox">
+                            QL
+                        </div>
+                    </div>
+                    <script>
+                        $(".appSelector").click(function(){
+                            appID = $(this).attr("id"); 
+                            appID = parseInt(appID);
+                            localStorage.setItem("appShow","yes");
+                            if($(this).hasClass("highlight")){
+                                $(this).removeClass("highlight");
+                                $("#"+appID+"container").hide();
+                                $("#"+appID+"PBox").hide();
+                                localStorage.setItem(appID+"container", "hidden");
+                            }
+                            else{
+                                $(this).addClass("highlight");
+                                $("#"+appID+"container").show();
+                                $("#"+appID+"PBox").show();
+                                localStorage.setItem(appID+"container", "shown");
+                            }
+                        });
+                        function getLayout(){
+                            start = 1;
+                            end = 20;
+                            for(var i = start; i < end; i++)
+                            {
+                                if(localStorage.getItem(i+"container")=="shown"){
+                                    $("#"+i+"container").show();
+                                    $("#"+i+"PBox").show();
+                                    $("#"+i+"app").addClass("highlight");
+                                }
+                                else if(localStorage.getItem(i+"container")=="hidden"){
+                                    $("#"+i+"container").hide();
+                                    $("#"+i+"app").removeClass("highlight");
+                                    $("#"+i+"PBox").hide();
+                                }
+                                else{
+                                    $("#"+i+"container").hide();
+                                    $("#"+i+"PBox").hide();
+                                }
+                            }
+                        }
+//                        function defaultLayout(){
+//                            localStorage.setItem("1container", "shown");
+//                            localStorage.setItem("2container", "hidden");
+//                            localStorage.setItem("3container", "shown");
+//                            localStorage.setItem("4container", "hidden");
+//                            localStorage.setItem("5container", "hidden");
+//                            localStorage.setItem("6container", "shown");
+//                            localStorage.setItem("7container", "hidden");
+//                            localStorage.setItem("8container", "shown");  
+//                            localStorage.setItem("9container", "shown");  
+//                            localStorage.setItem("10container", "hidden");  
+//                            localStorage.setItem("11container", "shown");  
+//                            localStorage.setItem("12container", "shown");  
+//                            localStorage.setItem("13container", "shown");  
+//                            localStorage.setItem("14container", "shown");  
+//                            getLayout();
+//                        }
+                    </script>
+                </div> 
+                <div class="settingsPane" id="themePane">
+                    <div class="ThemeContainer">
+                        <h1 class="settingsPaneHead">Choose a Theme</h1>
+                        <div class="ThemeSpace" id="themesettingsbutton">
+                            <img class="wphover" src="images/Icons/ThemeIcons/Space.jpg"/> <h3>Space</h3>
+                        </div>
+                        <div class="ThemeTron" id="themesettingsbutton">
+                            <img class="wphover" src="images/Icons/ThemeIcons/Tron.png"/>
+                            <h3>Tron</h3>
+                        </div>
+                        <div class="ThemeReset" id="themesettingsbutton">
+                            <img class="wphover" src="images/Icons/ThemeIcons/Reset.png"/> <h3>Reset</h3>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    /*RESET THEME!*/            
+                    $( ".ThemeReset" ).click(function() {
+                        localStorage.setItem("WPType", null);
+                        localStorage.setItem("theme", null);
+                        $(".normalbox, .longbox, .settingscontainer").removeClass("space, tron");
+                        getTime();
+                    });
+                    /*SPACE THEME!*/
+                    $( ".ThemeSpace" ).click(function() {
+                        localStorage.setItem("theme", "space");
+                        localStorage.setItem("WPType","theme");
+                        setWP("none");
+                    });  
+                    /*TRON THEME!*/
+                    $( ".ThemeTron" ).click(function() {
+                        localStorage.setItem("theme", "tron");
+                        localStorage.setItem("WPType","theme");
+                        setWP("none");
+                    });
+
+                    function setTheme(ThemeID){
+                        if (ThemeID == "space"){
+                            $(".normalbox, .longbox,    .settingscontainer").addClass("space");
+                        }
+                        if (ThemeID == "tron"){
+                            $(".normalbox, .longbox, .settingscontainer").addClass("tron");
+                        }
+                    }
+
+                </script>
+                <div class="settingsPane" id="quicklinksPane">
+                    <p class="settingsPaneHead">Choose Your Quick Links</p>
+                    <div class="ARow">
+                        <div class="QLSettingsButton" id="RD">
+                            <img class="QLImg" src="images/Icons/QuickLinks/reddit.png">               
+                        </div>
+                    </div>
+                    <div class="ARow">
+                        <div class="QLSettingsButton" id="FB">
+                            <img class="QLImg" src="images/Icons/QuickLinks/facebook.png">             
+                        </div>
+                        <div class="QLSettingsButton" id="TW">
+                            <img class="QLImg" src="images/Icons/QuickLinks/twitter.png">
+                        </div>
+                    </div>
+
+                     <div class="ARow">
+                         <div class="QLSettingsButton" id="PT">
+                             <img class="QLImg" src="images/Icons/QuickLinks/Pinterest.png">             
+                         </div>
+                         <div class="QLSettingsButton" id="TB">
+                             <img class="QLImg"  src="images/Icons/QuickLinks/Tumblr.png">             
+                         </div>
+                    </div>
+                    <div class="ARow">
+                        <div class="QLSettingsButton" id="NF">
+                            <img class="QLImg" src="images/Icons/QuickLinks/netflix.png">
+                        </div>
+                            <div class="QLSettingsButton" id="HU">
+                                <img class="QLImg" src="images/Icons/QuickLinks/Hulu.png">             
+                            </div>
+                    </div>
+                    <div class="ARow">
+                        <div class="QLSettingsButton" id="AZ">
+                            <img class="QLImg" src="images/Icons/QuickLinks/amazon.png">
+                        </div>
+                        <div class="QLSettingsButton" id="ES">
+                            <img class="QLImg" src="images/Icons/QuickLinks/ESPN.png">             
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // QUICK LINKS SETTINGS
+                    $(" #RD, #FB, #TW, #TB, #NF, #HU, #AZ, #ES").click(function(){
+                        if(!$(this).hasClass("highlight")){
+                            $(this).addClass("highlight");
+                        }
+                        else{
+                            $(this).removeClass("highlight");
+                        }
+                        if(!$("#RD, #FB, #TW, #TB, #NF, #HU, #AZ, #ES").hasClass("highlight")){
+                            $("#QLNotification").css("display", "block");
+                        }
+                        else{
+                            $("#QLNotification").css("display", "none");
+                        }
+                      
+                        if($(this).is("#RD")){
+                            if(localStorage.getItem("RDShow")=="yes"){
+                                $("#RD").removeClass("highlight");
+                                localStorage.setItem("RDShow", "no");
+                            }
+                            Reddit();
+                        }
+                        if($(this).is("#FB")){
+                            if(localStorage.getItem("FBShow")=="yes"){
+                                $("#FB").removeClass("highlight");
+                                localStorage.setItem("FBShow", "no");
+                            }
+                            Facebook();
+                        }
+                        if($(this).is("#TW")){
+                            if(localStorage.getItem("TWShow")=="yes"){
+                                $("#TW").removeClass("highlight");
+                                localStorage.setItem("TWShow", "no");
+                            }
+                            Twitter();
+                        }
+                        if($(this).is("#TB")){
+                            if(localStorage.getItem("TBShow")=="yes"){
+                                $("#TB").removeClass("highlight");
+                                localStorage.setItem("TBShow", "no");
+                            }
+                            Tumblr();
+                        }
+                        if($(this).is("#NF")){
+                            if(localStorage.getItem("NFShow")=="yes"){
+                                $("#NF").removeClass("highlight");
+                                localStorage.setItem("NFShow", "no");
+                            }
+                            Netflix();
+                        }
+                        if($(this).is("#HU")){
+                            if(localStorage.getItem("HUShow")=="yes"){
+                                $("#HU").removeClass("highlight");
+                                localStorage.setItem("HUShow", "no");
+                            }
+                            Hulu();
+                        }
+                        if($(this).is("#AZ")){
+                            if(localStorage.getItem("AZShow")=="yes"){
+                                $("#AZ").removeClass("highlight");
+                                localStorage.setItem("AZShow", "no");
+                            }
+                            Amazon();
+                        }
+                        if($(this).is("#ES")){
+                            if(localStorage.getItem("ESShow")=="yes"){
+                                $("#ES").removeClass("highlight");
+                                localStorage.setItem("ESShow", "no");
+                            }
+                            ESPN();
+                        }
+
+                    });
+
+                    function checkQL(){
+                        Reddit();
+                        Facebook();
+                        Twitter();
+                        Pinterest();
+                        Tumblr();
+                        Netflix();
+                        Hulu();
+                        Amazon();
+                        ESPN();
+                        noHighlight();
+                    }
+                    function noHighlight(){
+                        if(!$("#RD, #FB, #TW, #TB, #NF, #HU, #AZ, #ES").hasClass("highlight")){
+                            $("#QLNotification").css("display", "block");
+                        }
+                        else{
+                            $("#QLNotification").css("display", "none");
+                        }
+                    }
+
+                    function Reddit(){
+                        if(localStorage.getItem("RDShow")=="yes"){
+                            $("#RD").addClass("highlight");
+                        }
+                        if($("#RD").hasClass("highlight")){
+                            $("#Reddit").show();
+                            localStorage.setItem("RDShow", "yes");
+                        }        
+                        else if(!$("#RD").hasClass("highlight")){
+                            $("#Reddit").hide();
+                            localStorage.setItem("RDShow", "no");
+                        }
+                    }
+                    function Facebook(){
+                        if(localStorage.getItem("FBShow")=="yes"){
+                            $("#FB").addClass("highlight");
+                        }
+                        if($("#FB").hasClass("highlight")){
+                            $("#Facebook").show();
+                            localStorage.setItem("FBShow", "yes");
+                        }        
+                        else if(!$("#FB").hasClass("highlight")){
+                            $("#Facebook").hide();
+                            localStorage.setItem("FBShow", "no");
+                        }
+                    }
+                    function Twitter(){
+                        if(localStorage.getItem("TWShow")=="yes"){
+                            $("#TW").addClass("highlight");
+                        }
+                        if($("#TW").hasClass("highlight")){
+                            $("#Twitter").show();
+                            localStorage.setItem("TWShow", "yes");
+                        }        
+                        else if(!$("#TW").hasClass("highlight")){
+                            $("#Twitter").hide();
+                            localStorage.setItem("TWShow", "no");
+                        }
+                    }
+                    function Pinterest(){
+                        if(localStorage.getItem("PTShow")=="yes"){
+                            $("#PT").addClass("highlight");
+                        }
+                        if($("#PT").hasClass("highlight")){
+                            $("#Pinterest").show();
+                            localStorage.setItem("PTShow", "yes");
+                        }        
+                        else if(!$("#PT").hasClass("highlight")){
+                            $("#Pinterest").hide();
+                            localStorage.setItem("PTShow", "no");
+                        }
+                    }
+                    function Tumblr(){
+                        if(localStorage.getItem("TBShow")=="yes"){
+                            $("#TB").addClass("highlight");
+                        }
+                        if($("#TB").hasClass("highlight")){
+                            $("#Tumblr").show();
+                            localStorage.setItem("TBShow", "yes");
+                        }        
+                        else if(!$("#TB").hasClass("highlight")){
+                            $("#Tumblr").hide();
+                            localStorage.setItem("TBShow", "no");
+                        }
+                    }
+                    function Netflix(){
+                        if(localStorage.getItem("NFShow")=="yes"){
+                            $("#NF").addClass("highlight");
+                        }
+                        if($("#NF").hasClass("highlight")){
+                            $("#Netflix").show();
+                            localStorage.setItem("NFShow", "yes");
+                        }        
+                        else if(!$("#NF").hasClass("highlight")){
+                            $("#Netflix").hide();
+                            localStorage.setItem("NFShow", "no");
+                        }
+                    }
+                    function Hulu(){
+                        if(localStorage.getItem("HUShow")=="yes"){
+                            $("#HU").addClass("highlight");
+                        }
+                        if($("#HU").hasClass("highlight")){
+                            $("#Hulu").show();
+                            localStorage.setItem("HUShow", "yes");
+                        }        
+                        else if(!$("#HU").hasClass("highlight")){
+                            $("#Hulu").hide();
+                            localStorage.setItem("HUShow", "no");
+                        }
+                    }
+                    function Amazon(){
+                        if(localStorage.getItem("AZShow")=="yes"){
+                            $("#AZ").addClass("highlight");
+                        }
+                        if($("#AZ").hasClass("highlight")){
+                            $("#Amazon").show();
+                            localStorage.setItem("AZShow", "yes");
+                        }        
+                        else if(!$("#AZ").hasClass("highlight")){
+                            $("#Amazon").hide();
+                            localStorage.setItem("AZShow", "no");
+                        }
+                    }
+                    function ESPN(){
+                        if(localStorage.getItem("ESShow")=="yes"){
+                            $("#ES").addClass("highlight");
+                        }
+                        if($("#ES").hasClass("highlight")){
+                            $("#ESPN").show();
+                            localStorage.setItem("ESShow", "yes");
+                        }        
+                        else if(!$("#ES").hasClass("highlight")){
+                            $("#ESPN").hide();
+                            localStorage.setItem("ESShow", "no");
+                        }
+                    }
+
+                    function defaultQL(){
+                        localStorage.setItem("CPShow", "no");
+                        localStorage.setItem("RDShow", "yes");
+                        localStorage.setItem("FBShow", "yes");
+                        localStorage.setItem("TWShow", "yes");
+                        localStorage.setItem("PTShow", "yes");
+                        localStorage.setItem("TBShow", "yes");
+                        localStorage.setItem("NFShow", "yes");
+                        localStorage.setItem("HUShow", "yes");
+                        localStorage.setItem("AZShow", "yes");
+                        localStorage.setItem("ESShow", "yes");
+                        checkQL();
+                    }
+                </script>
+                <div class="settingsPane" id="weatherPane">
+                    <div class="weatherHolder">
+                        <div class="settingsPaneHead" id="weatherHeading"> 
+                            Change How Weather Looks
+                        </div>
+                        <form action="javascript: changeStuff();">
+                            <input class="searchbar" id="weatherForm" type="text" placeholder="Enter a location">
+                            <div class="degreeHolder">
+                                <div class="button" id="f">
+                                    Fahrenheit
+                                </div>
+                                <div class="button" id="c">
+                                    Celsius
+                                </div>
+                            </div>
+                            <input class='button' id='saveChanges' type="submit" value="Save Changes">
+                        </form> 
+                    </div>       
+                </div>
+                <script>       
+                    $("#f").click(function(){
+                        $(this).addClass('highlight');
+                        localStorage.setItem("degree", "f");
+                        $('#c').removeClass('highlight');
+                        //var degreeSet = localStorage.getItem("degree")
+                        });
+                    $("#c").click(function(){
+                        $(this).addClass('highlight');
+                        $('#f').removeClass('highlight')
+                        localStorage.setItem("degree", "c");
+                        //var degreeSet = localStorage.getItem("degree");
+                        });
+                    function changeStuff(){
+                        var cityInput = $("#weatherForm").val();
+                        localStorage.setItem("cityName", cityInput);
+                        var shit = localStorage.getItem("cityName");
+                        if(shit){
+                            localStorage.setItem("location", shit);
+                            location.reload();
+                        }
+                    }
+                </script>
+            </div>
+        </div>          <!--END SETTINGS CONTAINER-->
+<!--        </div>  END SETTINGS HIDE-->
+        
+        <script type="text/javascript">
+         
+// SETTINGS OPEN
+            $('#settingsOpen').click(function() {
+                settingsOpen()
+            });
+            
+            function firstTime(){
+                if(!localStorage.getItem("visited") == "yes"){
+
+                alert("Hi there! I see this is your first time to my website. This won't pop up again. I'm really happy you decided to stop by. If you like this page, add it as your home page.");
+                    localStorage.setItem("visited", "yes");
+                    defaultQL();
+                    defaultLayout();
+                }
+            }
+        </script>
+        <script>
+	        $(document).ready(function(){
+	       		 $(".loadingscreen").fadeOut("slow", 0);
+	        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1425 @@
+html { 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: fadein 2s;
+}
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+body{
+    transition: background 1s ease-in-out;
+    background-size: cover;
+    background:black;
+    font-family: helvetica;
+}
+#alldivs{
+    position:absolute;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin: 0 auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    max-width: 60em;
+    justify-content: center;
+/*    transition: all 3s ease-in-out;*/
+    animation: fadein 3s;
+}
+.longboxHolder{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 60em;
+
+}
+/* unvisited link */
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color:white;
+}
+.popup{
+    position:absolute;
+    height:20em;
+    width:30em;
+    margin: auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    text-align: center;
+    color:white;
+    background-color:rgba(255,255,255,.5);
+    border:.2em solid white;
+}
+.popup-back{
+    display:none;
+    position:fixed;
+    z-index:999;
+    height:100%;
+    width:100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(0,0,0,.8);
+    animation: fadein .2s;
+}
+.done{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:3em;
+    line-height: 3em;
+    background-color:rgba(0, 100, 200, 0.6);
+    border-top:.2em solid white;
+    transition: all .1s ease-in-out;
+    color:white;
+}
+.done:hover{
+    background-color:rgba(0, 100, 200, 1);
+    transition: all .1s ease-in-out;
+}
+.popupText{
+    position:absolute;
+    height: 3em;
+    width:80%;
+    margin:auto;
+    left:0;
+    right:0;
+    margin-top:3em;
+}
+#classLink{
+    margin-top:10em;
+}
+/*Body Styling*/
+
+.loadingscreen {
+/*    display: none;*/
+    background: #111;
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width:100%;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner {
+  font-size: 50px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.spinner.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+        margin: auto;
+}
+.spinner .spinner-blade {
+    position: absolute;
+    left: 0.4629em;
+    bottom: 0;
+    width: 0.074em;
+    height: 0.2777em;
+    border-radius: 0.5em;
+    background-color: transparent;
+    -webkit-transform-origin: center -0.2222em;
+          transform-origin: center -0.2222em;
+    -webkit-animation: spinner-fade 1s infinite     linear;
+          animation: spinner-fade 1s infinite linear;
+}
+.spinner .spinner-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.spinner .spinner-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+          animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.spinner .spinner-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+          animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.spinner .spinner-blade:nth-child(4) {
+    -webkit-animation-delay: 0.249s;
+          animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.spinner .spinner-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+          animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+.spinner .spinner-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+          animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+.spinner .spinner-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+          animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.spinner .spinner-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+          animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+.spinner .spinner-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+          animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+.spinner .spinner-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+          animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+.spinner .spinner-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+          animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+}
+.spinner .spinner-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+          animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+}
+
+@-webkit-keyframes spinner-fade {
+  0% {
+    background-color: #69717d;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.button{   /*defaultbutton*/
+    position:relative;
+    margin-bottom:2em;
+    border:2px solid lightgray;
+    background-color:rgba(100, 100, 100, 0.5);
+    color:white;
+    height:24px;
+    font-family:helveticaneue, helvetica;
+    font-size:1em;
+    text-align:center;
+}
+.button:hover{ 
+    color:rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px #9ecaed;
+}
+.backgroundcover{
+    display:none;
+    position:fixed;
+    margin-left:-8px;
+    margin-top:-8px;
+    height:100%;
+    width:100%;
+    background-color:black;
+}
+.backgroundcover2{
+    position:fixed;
+    margin-left:-8px;
+    margin-top:-8px;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,.3);
+    transition: all .3s ease-in-out;
+    animation: fadein 2s;
+}
+                                           /*Fade In Animations*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.normalbox, .longbox{
+    position:relative;
+    background-color:rgba(200,200,200,.2);
+    border:.2em solid rgba(255,255,255,.9);
+    height:12.5em;
+    width:16em;
+    border-radius:4px;
+    margin:1em;
+    animation: fadein 1s;
+    transition: all 0.25s ease-in-out;
+}
+.normalbox{
+    display:none;
+}
+.normalbox:hover, .longbox:hover{
+    box-shadow: 0 0 30px #9ecaed;
+}
+.longbox{
+    height:21.1em;
+    width:16rem;
+    animation:  3s;
+}     
+.buttonHolder{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height:2.5em;
+    width:100%;
+    margin-top:0em;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+    animation: fadein .3s;
+}
+.leftButton{
+    width:33.33%;
+    border:none;
+    border-right:.3em solid white;
+    border-top:.3em solid white;
+}
+.middleButton{
+    width:33.33%;
+    margin-left:33.33%;
+    border:none;
+    border-top:.3em solid white;
+}
+.rightButton{
+    width:33.33%;
+    margin-left:66.66%;
+    border:none;
+    border-top:.3em solid white;
+    border-left:.3em solid white;
+}
+.rightButton,.leftButton,.middleButton{
+    box-sizing: border-box;
+    position:absolute;
+    height:2.8em;
+    border-bottom: .3em solid white;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: fadein .3s;
+}
+
+/*Widget Image Styling*/
+body div div img{
+    animation: fadein 2s;
+}
+  ::-webkit-input-placeholder {
+   color: rgba(0,0,0,.5);
+}                                              /*Search Bar Styling*/
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height:3em;
+    width:100%;
+    bottom:0;
+}
+.searchContainer form{
+    width:100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.searchContainer form input:nth-child(1){
+    width:75%;
+    border:none;
+    border-top:.3em solid white;
+    border-right:.15em solid white;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+.input:focus{
+    box-shadow: none;
+}
+.searchContainer form input:nth-child(2){
+    height:100%;
+    width:25%;
+    border:none;
+    color:rgba(255,255,255,.8);
+    border-top:.3em solid white;
+    border-left:.25em solid white;
+    border-bottom:.25em solid white;
+    background-color:rgba(55, 55, 55, .6);
+    box-sizing: border-box;
+    line-height: 3.5em;
+}
+.searchbar{
+    box-sizing: border-box;
+    position:relative;
+    width:13.65em;
+    height:100%;
+    line-height: 3.5em;
+    border:none;
+    border-top:.3em solid white;
+    border-right:.3em solid white;
+    margin: 0 auto;
+    font-size:.8em;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.searchbar:focus{
+    margin-top:0px;
+    box-shadow: none;
+    outline:none;
+}
+/*
+.searchbutton{
+    box-sizing: border-box;
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    right:0;
+    height:4em;
+    width:25%;
+    background-color:rgba(55, 55, 55, .6);
+    border:none;
+    color:rgba(255,255,255,.8);
+    border-top:.3em solid white;
+    border-left:.3em solid white;
+    box-sizing: border-box;
+    position:relative;
+    width:6em;
+    height:3.7em;
+    border:none;
+    border-top:.3em solid white;
+    border-left:.3em solid white;
+    margin: 0 auto;
+    font-size:.8em;
+    color:rgba(255,255,255,.8);
+    background-color:rgba(55, 55, 55, .6);
+}
+*/
+.logoHolder{
+    position:relative;
+    display:flex;
+    overflow:hidden;
+    align-content: center;
+    height:9.6em;
+    width:100%;
+}
+                                            /*Wikipedia*/
+.logoHolder img{
+    position:relative;
+    max-height: 60px;
+    cursor:default;
+    top:3em;
+    margin: 0 auto;
+}
+#alldivs div:hover .buttonHolder{
+    opacity:1;
+    margin-top:-2.3em;
+}
+.yahoo{
+    max-width:13em;
+}
+.yahoobutton{
+    text-align:center;
+    position:relative;
+    flex-wrap: wrap;
+    flex-direction:-webkit-row;
+    flex-direction: row;
+    font-family:helveticaneue, helvetica;
+    color:white;   
+    margin-bottom:5em;
+}
+.googlebutton{
+    position:relative;
+    z-index:1;
+    flex-wrap: wrap;
+    flex-direction:-webkit-row;
+    flex-direction: row;
+    text-align:center;
+    position:relative;
+    font-family:helveticaneue, helvetica;
+    color:white;    
+}
+.buttonpicture{
+    margin-top:.3em;
+    max-height:3.8em;
+    cursor:default;
+}
+.kickass{
+    position:relative;
+    max-height:9.3em;
+    margin-left:55px;
+    cursor:default;
+    filter: grayscale(100%);
+}
+.redditImg{
+    position:relative;
+    max-height:3em;
+    margin-top:3.3em;
+    margin-bottom:3em;
+    margin-left:55px;
+    cursor:default;
+}
+.frontpage{
+    display:none;
+    position:absolute;
+    margin-bottom:1em;
+    margin-left:2.1em;
+    font-family:helveticaneue, helvetica;
+    background-color:rgba(100, 100, 100, 0.5);
+    color:white;
+}
+#subreddits{
+    width:9em;
+    border-top-right-radius: 4px;
+    border-right: .3em solid white;
+}
+.facebookImg{
+    position:relative;
+    max-height:2em;
+    margin-top:4.3em;
+    margin-bottom:3em;
+    margin-left:55px;
+    cursor:default;
+}
+
+.wall{
+    display:none;
+    position:absolute;
+    margin-bottom:1em;
+    margin-left:2.1em;
+    font-family:helveticaneue, helvetica;
+    background-color:rgba(100, 100, 100, 0.5);
+    color:white;
+}
+.messages{
+    display:none;
+    position:absolute;
+    margin-bottom:1em;
+    margin-left:6.5em;
+    font-family:helveticaneue, helvetica;
+    background-color:rgba(100, 100, 100, 0.5);
+    color:white;
+}
+.wall:hover, .messages:hover{
+    display:block;
+    transition: all 0.30s ease-in-out;
+}
+body div div div:hover .wall, 
+body div div div:hover .messages,
+body div div div:hover .frontpage, 
+body div div div:hover .subreddits{
+    display:block;
+    transition: all 0.30s ease-in-out;
+    animation: fadein .25s;
+}
+.soundcloud{
+    position:relative;
+    max-height:82px;
+    margin-top:20px;
+    margin-bottom:3em;
+    margin-left:64px;
+    cursor:default;
+}
+#SCdownloadcontainer{
+    display:none;
+}
+.amazon{
+    position:relative;
+    max-height:63px;
+    margin-top:35px;
+    margin-bottom:3.28em;
+    margin-left:34px;
+    cursor:default;
+}
+#account{
+    border-top-right-radius: 4px;
+}
+.youtube{
+    position:relative;
+    max-height:71px;
+    margin-top:30px;
+    margin-bottom:3em;
+    margin-left:44px;
+    cursor:default;
+}
+#SCdownloadShow{
+    opacity:0;
+    position:absolute;
+    max-height:1.5em;
+    right:0;
+    padding:.4em;
+}
+#YTdownloadShow{
+    display:none;
+    position:absolute;
+    max-height:1.5em;
+    right:0;
+    padding:.4em;
+    animation: fadein .25s;
+}
+#downloadHide{
+    display:none; 
+    position:absolute;
+    border:.1em solid white;
+    padding:.5em;
+    background-color:rgba(100, 100, 100, 0.5);
+    color:white;
+    font-size:.7em;
+    margin-top:2.5em;
+    margin-left:2em;
+    font-family:helvetica;
+}
+#alldivs div:hover #SCdownloadShow, #alldivs div:hover #YTdownloadShow{
+    opacity:1;
+    position:absolute;
+    display:block;
+    transition: all .2s ease-in-out;
+}
+.buttonrow:focus{
+    outline:none;
+}
+.buttonrow:active{
+    background-color: rgba(200, 200, 200, 0.5);
+    box-shadow: 0 0 50px #9ecaed;
+}
+.display{
+    position:relative;
+    box-sizing: border-box;
+    width:100%;
+    height:1.4em;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 3em;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.5);
+    border:none;
+}
+.calcRow{
+    position:relative;
+    display:flex;
+    height:3.2em;
+    border-top:.2em solid white;
+}
+.calcButton{
+    height:100%;
+    width:25%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border:none;
+    border-right:.2em solid white;
+}
+.calcButton:active{
+    background-color:rgba(100,100,100,.5)
+}
+#operand{
+    border-right:none;
+    background-color:rgba(100,100,100,.5);
+    color:white;
+}
+#operand:active,#zero:active, #period:active, #equalSign:active{
+    background-color:rgba(200,200,200,.5);
+}
+#reset{
+    width:75%;
+}
+#zero, #period, #equalSign{
+    width:100%;
+    background-color:rgba(100,100,100,.5);
+    color:white;
+}
+#equalSign{
+    border-right:none;
+}
+.calcButton:focus{
+    outline: none;
+}
+.DLHide{
+    display:none;
+}
+#YTdownloadcontainer{
+    display:none;
+}
+.youtubedownloader{
+    margin: 0 auto;
+    margin-top:2em;
+    margin-bottom:2.5em;
+}
+.downloadHide{
+    position:absolute;
+    z-index:1;
+    max-height:2em;
+    right:0;
+}
+.youmagictube{
+    position:relative;
+    max-height:30px;
+    margin-top:20px;
+    display:block;
+    margin-left:30px;
+    margin-right:auto;
+    cursor:default;
+}
+.youmagictube2{
+    margin-top:42px;
+    font-familY:helvetica;
+    color:white;
+}
+.videodownload{
+    position:relative;
+    margin-top:15px;
+}
+.soundclouddownloader{
+    margin: 0 auto;
+    margin-top:2em;
+    margin-bottom:2.5em;
+}
+#soundclouddownload{
+    position:absolute;
+    z-index:1;
+    margin-top:3em;
+}
+#sounddownload{
+    position:absolute;
+    z-index:1;
+    margin-top:8em;
+    margin-left:30px;
+    font-family:helvetica;
+    color:white;
+}
+#downloadinstructions{
+    max-height:180px;
+    margin-top:50px;
+}
+.soundbutton{
+    position:absolute;
+    border:1px solid #565656;
+    background-color:#565656;
+    margin-top:6em;
+    margin-left:16.5em;
+    height:24px;
+    font-family:helvetica;
+    color:white;
+    border:4px solid darkgray;
+}
+.hiddenformdownload{
+    visibility:hidden;
+    display:inline;
+    position:absolute;
+    background-color:white;
+    text-align:center;
+    border:2px solid lightblue;
+    margin-top:-150px;
+    border-radius:4px;
+    height:310px;
+    width:260px;
+}
+
+#weathercontainer{
+    overflow:hidden;
+}
+.WDIcon{
+    position:relative;
+    display:block;
+    max-height:120px;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+}
+#WDContainer{
+    height:10em;
+    max-width:12em;
+    margin: 0 auto;
+    color:white;
+    text-align: center;
+}
+.WDirections{
+    position:relative;
+    margin-bottom:1em;
+    text-align:center;
+    font-family:helveticaneue, helvetica;
+    color:white;
+}
+#weatherSettings{
+    position:absolute;
+    z-index:1;
+    max-height:1.5em;
+    margin:.5em;
+    margin-bottom:-1em;
+}
+#weather{
+    position:relative;
+    text-align:center;
+    font-size:1em;
+    color:white;
+    overflow: auto;
+}
+#weather:hover{
+    box-shadow: none;
+}
+.WeatherHead{
+    position:relative;
+    margin-top:.5em;
+    margin-left:1em;
+    font-size:3em;
+    color:white;
+}
+.WeatherCity{
+    position:relative;
+    margin-top:-3em;
+    font-size:1em;
+    color:white;
+}
+.currentlyimg{
+    max-height:50px;
+    margin-bottom:-.4em;
+    margin-left:0em;
+}
+.forecast{
+    position:relative;
+    border-top:.1em solid white;
+    padding-top:.2em;
+    padding-bottom:.9em;
+    width:100%;
+}
+.currently{
+    position:relative;
+    margin-top:-1em;
+}
+
+#prefscontainer{
+    color: white;
+    text-align: center;
+}
+#prefscontainer div{
+    text-align: left;
+    margin: 1em;
+}
+
+
+#quicklinkscontainer{
+    overflow:auto;
+}
+.quicklinkshead{
+    position:relative;
+    margin:auto;
+    height:3em;
+    text-align:center;
+    border-bottom:.3em solid white;
+    background-color:rgba(0,0,0,.7);
+    color:white;
+}
+#QLNotification{
+    display:none;
+    margin: auto;
+    height:15em;
+    width:10em;
+    color: white;
+    text-align: center;
+    line-height: 2
+}
+.QLDirections{
+    position:relative;
+    margin-bottom:1em;
+    text-align:center;
+    color:white;
+}
+.quicklinkstext{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.QLButton{
+    position:relative;
+    display:flex;
+    margin:auto;
+    left:0;
+    right:0;
+    height:3.5em;
+    width:100%;
+    border-bottom:.3em solid white;
+    transition: all 0.30s ease-in-out;
+    animation: fadein .25s; 
+}
+.QLButton:hover{
+    box-shadow:none;
+    border-bottom:.3em solid white;
+}  
+.QLImg{
+    position:absolute;
+    display:block;
+    max-height:2em;
+    margin:auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    
+}
+.calculator{
+    
+}
+
+#Reddit{
+    background-color:rgba(36, 116, 237, 0.6);
+}
+#Reddit:hover{
+    background-color:rgba(255, 69, 0, 1.0);
+}
+#Facebook{
+    background-color:rgba(59, 89, 152, 0.7);
+}
+#Facebook:hover{
+    background-color:rgba(59, 89, 152, 1.0);
+}
+#Twitter{
+    background-color:rgba(22, 185, 237, .7);
+}
+#Twitter:hover{
+    background-color:rgba(0, 134, 224, 1.0);
+}
+#Pinterest{
+    background-color:rgba(203, 32, 39, .7);
+}
+#Pinterest:hover{
+    background-color:rgba(203, 32, 39, 1);
+}
+#Tumblr{
+    background-color:rgba(52, 70, 93, .7);
+}
+#Tumblr:hover{
+    background-color:rgba(52, 70, 93, 1);
+}
+#Netflix{
+    background-color:rgba(185,9,11, 0.6);
+}
+#Netflix:hover{
+    background-color:rgba(185,9,11, 1.0);
+}
+#Hulu{
+    background-color:rgba(89, 202, 41, .7);
+}
+#Hulu:hover{
+    background-color:rgba(89, 202, 41, 1);
+}
+#Amazon{
+    background-color:rgba(0,0,0,.7);
+}
+#Amazon:hover{
+    background-color:rgba(255, 146, 1, .7);
+}
+#ESPN{
+    background-color: rgba(204, 0, 0, .7);
+}
+#ESPN:hover{
+    background-color: rgba(204, 0, 0, 1);
+}
+#settingsOpen{
+    position:absolute;
+    z-index:1;
+    max-height:1.5em;
+    margin:.5em;
+    margin-bottom:-1em;
+    animation: fadein .25s;
+}
+.settings:hover{
+    box-shadow:none;
+    background-color:rgba(0,0,0,1);
+}
+.settingsicon{
+    position:absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    max-height:3em;
+    transition: all 0.30s ease-in-out;
+    animation: fadein .25s;
+}
+.settingscontainer{
+    display:none;
+    position:absolute;
+    width:100%;
+    max-width:60em;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    background-color:rgba(200,200,200,.2);
+    border:.2em solid rgba(255,255,255,.6);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.settingshead{
+    height:1.5em;
+    margin: 0 auto;
+    font-size:2.5em;
+    text-align: center;
+    color:white;
+    line-height: 1.4em;
+    border-bottom:.1em solid white;
+}
+.closebutton{
+    position:absolute;
+    z-index:999;
+    right:0;
+    max-height:2em;
+    padding:.5em;
+    font-family:helveticaneue, helvetica;
+    animation: none;
+}
+.settingsdivider{
+    position:relative;
+    display:flex;
+}
+
+.SBcontainer{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    clear:right;
+    width:10em;
+    height:100%;
+}
+.SBcontainer:hover, .settingsdivider:hover, .wpflex:hover, #wallpapericon:hover{
+    box-shadow:none;
+}
+.settingsButton{
+    box-sizing: border-box;
+    position:relative;
+    line-height: 7em;
+    color:white;
+    text-align:center;
+    background-color:rgba(100, 100, 100, 0.5);
+    border:.3em solid white;
+    border-left:none;
+    border-bottom:none;
+    transition: all 0.30s ease-in-out;
+}
+.settingsButton:hover{
+    color:rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px #9ecaed;
+    transition: all .3s ease-in-out;
+}
+#wpchanger{
+    border-top:none;
+}
+#themesettingsbutton{
+    position:relative;
+    text-align:center;
+    margin:1em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size:.8em;
+    font-family:helvetica;
+    background-color:rgba(100, 100, 100, 0.5);
+    border:.3em solid white;
+    transition: all 0.30s ease-in-out;
+}
+#themesettingsbutton:hover{
+    box-shadow:none;
+}
+.space{
+    background: rgba(0,0,0,.5);
+    border: .2em solid rgba(143, 150, 255, 1)
+}
+.tron{
+    border: .2em solid rgba(143, 198, 226, 1);
+/*    background: rgba(0,80,130,.5);*/
+    box-shadow: 0 0 10px #9ecaed;
+}
+.CB{
+    justify-content:center;
+}
+.wpclose{
+
+    display:none;
+}
+.searchengine{
+    position:relative;
+}
+.searchengineclose{
+    display:none;
+}
+.themebutton{
+    position:relative;
+}
+.themebuttonclose{
+    position:relative;
+    display:none;
+}
+#wallpapericon{
+    position:relative; 
+    height:30%;
+    justify-content:center;
+    align-content: center;
+    margin:0 auto;
+}
+.settingsPane{
+    display:none;
+    position:relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:0 auto;
+    right:0;
+    height:100%;
+    width:70%;
+    justify-content: center;
+    max-width:43em;
+    overflow:auto;
+}
+.wpdesktop{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 45em;
+    margin:0 auto;
+    
+}
+.wpmobile{
+    display:none;
+}
+.wphover, .pWallpaper{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    margin:.5em;
+    flex-wrap: wrap;
+    z-index: 1;
+    max-height:150px;
+    max-width:150px;
+    border:.5em solid white;
+    animation: fadein .20s;
+}
+.wphover:hover, .pWallpaper:hover{
+    box-shadow: 0 0 1em #9ecaed;
+    border:.5em solid lightblue;
+    transition: all 0.20s ease-in-out;
+}
+.uploadWP{
+    display:flex;
+    margin:.5em;
+    color:white;
+    flex-wrap: wrap;
+    border:.5em solid white;
+    transition: all 0.30s ease-in-out;
+    background-size: cover;
+}
+#uploadButton{
+    box-sizing: border-box;
+    position:relative;
+    height:4.68em;
+    border:.2em solid white;
+    margin:0 auto;
+    background:white;
+}
+#eraseWP{
+    box-sizing: border-box;
+    position:relative;
+    height:4.66em;
+    border:.2em solid white;
+    margin:0;
+}
+#currentWP{
+    box-sizing: border-box;
+    position:relative;
+    background-color:rgba(0,0,0,.3);
+    line-height: 4em;
+    width:9em;
+    margin:0;
+    border:.2em solid white;
+    background-size: cover;
+}
+.uploadWPText{
+    text-align:center;
+    margin:auto;
+        
+}
+#wpoptions{
+    box-sizing: border-box;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    width:6.5em;
+    border:.2em solid white;
+    margin:0;
+}
+#cover:hover, #contain:hover, #stretch:hover{
+    color:rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px #9ecaed;
+    transition: all 0.30s ease-in-out;
+}
+.wpbutton{
+    box-sizing: border-box;
+    height:2.98em;
+    width:100%;
+    text-align: center;
+    padding-top:.3em;
+    border:.3em solid white;
+    background-color:rgba(0,0,0,.5);
+}
+.appContainer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height:17em;
+    color:white;
+    font-size: 1.5em;
+    border:.2em solid white;
+    overflow: auto;
+    background-color: rgba(200,200,200,.2);
+}
+.appSelector{
+    position:relative;
+    width:10em;
+    border:.1em solid white;
+    margin: .2em;
+    padding-left:.5em;
+    background-color: rgba(0,0,0,.2);
+    transition: .15s all ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+.appSelector img{
+    max-height: 2em;
+    padding:.5em;
+}
+.pageSize{
+    width:25%;
+}
+.pageSize div{
+    height:3em;
+    line-height: 3em;
+    margin: 1em;
+}
+#PerRow3{
+    
+}
+.appPreview{
+    display:flex;
+    flex-wrap:wrap;
+    margin:1em auto;
+    height:15em;
+    width:20em;
+    overflow: auto;
+    justify-content: center;
+    background-color: rgba(200,200,200,.2);
+    border:.2em solid white;
+    border-radius: 4px;
+}
+.normalPBox{
+    display:flex;
+    position:relative;
+    justify-content: center;
+    background-color:rgba(200,200,200,.2);
+    border:.2em solid rgba(255,255,255,.9);
+    height:2rem;
+    width:4rem;
+    border-radius:4px;
+    margin:.5em;
+    animation: fadein 1s;
+    transition: all 0.25s ease-in-out;
+}
+.normalPBox img, .longPBox img{
+    max-height:1.78em;
+}
+.longPBox{
+    position:relative;
+    background-color:rgba(200,200,200,.2);
+    border:.2em solid rgba(255,255,255,.9);
+    height:3.5rem;
+    width:3rem;
+    border-radius:4px;
+    margin:.5em;
+    animation: fadein 1s;
+    transition: all 0.25s ease-in-out;
+}
+
+/*
+.SEHeading{
+    position:relative;
+    margin:0 auto;
+    margin-top:1em;
+    text-align:center;
+    width:90%;
+    padding:.5em;
+    flex-wrap: wrap;
+    font-family:helvetica;
+    color:white;
+    border:3px solid white;
+}
+.SEBox{
+    position:relative;
+    height:10em;
+    width:10em;
+    background-color:rgba(200,200,200,.1);
+    border:.2em solid rgba(255,255,255,.9);
+    border-radius:4px;
+    margin:.2em;
+    overflow:auto;
+}
+.SEBoxOption{
+    position:relative;
+    height:3em;
+    background-color:rgba(250,250,250,1);
+    border:.2em solid rgba(255,255,255,.9);
+    border-radius:4px;
+    margin:1em;
+    flex-wrap: wrap;
+}
+.SEBoxImg{
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    max-height:3em;
+    animation: none;
+}
+*/
+.ThemeContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 45em;
+    margin:0 auto;
+}
+.ThemeContainer:hover{
+    box-shadow: none;
+}
+#themesettingsbutton img{
+    border:none;
+    margin: 0 auto;
+}
+#themesettingsbutton img:hover{
+    box-shadow: none;
+    
+}
+#themesettingsbutton {
+    color:white;
+}
+.settingsPaneHead{
+    position:relative;
+    text-align:center;
+    margin:0 auto;
+    width:100%;
+    padding:.5em;
+    font-size:1.2em;
+    color:white;
+}
+.ARow{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    margin:0 auto;
+    flex-wrap:wrap;
+    flex-direction:row;
+}
+.QLSettingsButton{
+    box-sizing: border-box;
+    position:relative;
+    height:3.5em;
+    margin: .3em;
+    width:100%;
+    max-width:20em;
+    background-color:rgba(100,100,100,.7);
+    border:.2em solid white;
+}
+.QLSettingsButton:hover{
+    color:white;
+    box-shadow:none;
+    transition: all 0.20s ease-in-out;
+}
+#weatherHeading{
+    max-width:38.5em;
+    margin: 0 auto;
+}
+#weatherPane{
+    
+}
+.weatherHolder{
+    width:100%;
+}
+#weatherForm{
+    position:relative;
+    margin: 0 auto;
+    margin-top:3em;
+    width:90%;
+    height:7em;
+    border:none;
+    background-color: rgba(255,255,255,.9);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#weatherPane form{
+    position:relative;
+    width:90%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+}
+.degreeHolder{
+    position:relative;
+    display:flex;
+    height:3em;
+    width:90%;
+    margin: 0 auto;
+    line-height: 3em;
+    justify-content: center;
+}
+#f{
+    position:relative;
+    width:50%;
+    height:3em;
+    transition: all .2s ease-in-out;
+}
+#c{
+    position:relative;
+    width:50%;
+    height:3em;
+    transition: all .2s ease-in-out;
+}
+#saveChanges{
+    width:90%;
+    height:4em;
+    margin: 0 auto;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.highlight{
+    background-color:rgba(51, 102, 204, .7);
+}
+.hide{
+    display:none;
+}
