@@ -58,7 +58,6 @@ $(document).ready(function(){
             $("#guestInfo").append("<p id='fullname'> Guest - " + firstName + " " + lastName + "</p>");
             message = time + " " + guest + ", and welcome to " + company + ". Room #" + room + " is now available for you" + ". Feel free to reach out to us anytime, our concierge desk is available 24/7 for ticket prices, tour locations, and the best meals in " + city + "!";
             $("#email").val(firstName + "." + lastName + "@aol.com");
-            $("#guests").val(0);
             $("#description").val(message);
         });
     }
@@ -71,7 +70,6 @@ $(document).ready(function(){
             timeZone = data[index].timezone;
             message = time + " " + guest + ", and welcome to " + company + ". Room #" + room + " is now available for you" + ". Feel free to reach out to us anytime, our concierge desk is available 24/7 for ticket prices, tour locations, and the best meals in " + city + "!";
             $("#email").val(firstName + "." + lastName + "@aol.com");
-            $("#companies").val(0);
             $("#description").val(message);
         });
     }
@@ -123,6 +121,8 @@ btn.onclick = function(event) {
         // so much real
         setTimeout(function(){
             $("#email").val("");
+            $("#companies").val(0);
+            $("#guests").val(0);
             $("#description").val("");
             $("#fullname").text("sent message!");
             modal.style.display = "none";
