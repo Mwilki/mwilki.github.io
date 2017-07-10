@@ -1,0 +1,7 @@
+{
+    "greeting_start": {
+        "morning": "Good Morning", 
+        "afternoon": "Good Afternoon", 
+        "evening": "Good Evening"
+    }
+}
