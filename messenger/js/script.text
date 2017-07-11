@@ -11,7 +11,7 @@ $(document).ready(function(){
     var firstName;
     var lastName;
 
-        // invoke template function to grab appropriate time-of-day message
+    // invoke template function to grab appropriate time-of-day message
     loadTemplate();
     loadGuests();
     loadCompanies();
@@ -29,8 +29,8 @@ $(document).ready(function(){
     });
 });
 
+// choose appropriate template data.
 function loadTemplate(){
-    // choose appropriate template data.
     var date = new Date();
     var hours = date.getHours();
     $.getJSON('Template.json', function(data){
@@ -54,11 +54,11 @@ function changeGuest(index, company, city){
         // startTicks = data[index].reservation.startTimestamp;
         firstName = data[index].firstName;
         lastName = data[index].lastName;
-        // thats a lot of arguments
+        // I'm sorry
         updateGuestInfo(guest, room, company, city, firstName, lastName);
     });
 }
-
+// I said i'm sorry
 function updateGuestInfo(guest, room, company, city, firstName, lastName){
         $("#guestInfo").empty();
         $("#guestInfo").append("<p id='fullname'> Guest - " + firstName + " " + lastName + "</p>");
