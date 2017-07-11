@@ -13,7 +13,9 @@ $(document).ready(function(){
 
     // invoke template function to grab appropriate time-of-day message
     loadTemplate();
+    // populates the steeple with the people
     loadGuests();
+    // same
     loadCompanies();
 
     // dynamically change content on option select for guests
