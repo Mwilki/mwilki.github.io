@@ -18,4 +18,4 @@ Validation measurements were also made to guarantee a client wouldn't send a mes
 
 What didn't you get to, or what else might you do with more time?
 I'd like to hook the application up to a MySQL database.
-Something else that would be cool - append some links relevant to the guest's city (restaurants, beaches, stores) that are within a < 5 mile radius of their hotel.
+Something else that would be cool : append some links relevant to the guest's city (restaurants, beaches, stores) that are within a < 5 mile radius of their hotel.

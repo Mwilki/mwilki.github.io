@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function(){
     // variables for storing extracted json
     var email;
