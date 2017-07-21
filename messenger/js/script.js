@@ -54,15 +54,15 @@ function changeGuest(index, company, city){
         // startTicks = data[index].reservation.startTimestamp;
         firstName = data[index].firstName;
         lastName = data[index].lastName;
-        // I'm sorry
         updateGuestInfo(guest, room, company, city, firstName, lastName);
     });
 }
-// I said i'm sorry
+
 function updateGuestInfo(guest, room, company, city, firstName, lastName){
         $("#guestInfo").empty();
         $("#guestInfo").append("<p id='fullname'> Guest - " + firstName + " " + lastName + "</p>");
-        message = time + " " + guest + ", and welcome to " + company + ". Room #" + room + " is now available for you" + ". Feel free to reach out to us anytime, our concierge desk is available 24/7 for ticket prices, tour locations, and the best meals in " + city + "!";
+        message = time + " " + guest + ", and welcome to " + company + ". Room #" + 
+        room + " is now available for you" + ". Feel free to reach out to us anytime, our concierge desk is available 24/7 for ticket prices, tour locations, and the best meals in " + city + "!";
         $("#email").val(firstName + "." + lastName + "@aol.com");
         $("#description").val(message);
 }
