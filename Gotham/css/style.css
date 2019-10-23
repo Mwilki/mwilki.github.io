@@ -1,0 +1,283 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+    background-color: #ecf0f1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Standard fond size */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.woff') format('woff'),
+         url('../fonts/Roboto/Roboto-Regular.ttf') format('ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('../fonts/Proxima Nova/ProximaNova-Light.woff') format('woff'),
+         url('../fonts/Proxima Nova/ProximaNova-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'ProximaB';
+    src: url('../fonts/Proxima Nova/ProximaNova-Bold.woff') format('woff'),
+         url('../fonts/Proxima Nova/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'RobotoL';
+    src: url('../fonts/Roboto/Roboto-Light.woff') format('woff'),
+         url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+
+/* Header, Footer */
+.page-header, .page-footer {
+    height: 89px;
+    width: 100%;
+    background-color: rgb(64, 64, 64);
+    color: white;
+    display: flex;
+}
+
+.wrapper {
+    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;  
+}
+
+.left-nav ul li::after, .right-nav ul li::after{
+    content : "|";
+    color: #990000;
+    font-size: 15px;
+}
+
+.left-nav ul li:last-child::after, .right-nav ul li:last-child::after{
+    display: none;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;    
+}
+
+.page-footer {
+    display: block;
+    margin-top: 25px;
+}
+
+.page-header nav ul, .page-footer nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-header nav a{
+    font-family: 'Proxima';
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 25px;
+}
+
+.page-footer, .page-footer .wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.copy {
+    font-family: 'Proxima';
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.socials {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: rgb(64, 64, 64);
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0 18px;
+}
+
+/* Banner */
+.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 60px;
+    padding-top: 10px;
+    border-bottom: 3px solid #990000 ;
+}
+
+/* Section */
+section {
+    display: flex;
+}
+/* Main */
+main {
+    width: 77%;
+    padding-top: 25px;
+}
+
+h2 {
+    font-family: ProximaB;
+    font-size: 24px;
+}
+
+article {
+    display: flex;
+    padding-top: 25px;
+}
+
+article h3 {
+    font-family: Roboto;
+    font-size: 30px;
+}
+
+.meta {
+    font-family: RobotoL;
+    color: #990000;
+}
+
+.article-left {
+    width: 30%;
+}
+
+
+.article-left img {
+    border-radius: 3px;
+    width: 100%;
+}
+
+.article-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.article-right p {
+    padding-top: 25px;
+}
+
+.meta span::after{
+    display: inline-block;
+    content: "|";
+    color: #999;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.meta span:last-child::after{
+    display: none;
+}
+
+.category {
+    color: rgb(64, 64, 64);
+}
+
+.description {
+    font-family: Roboto;
+    color: black;
+    font-size: 16px;
+}
+
+/* Side Bar */
+.right-sidebar {
+    width: 23%;
+}
+
+.additional {
+    color: black;
+    font-family: Roboto;
+}
+
+.views::before {
+    content: "\f06e";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+}
+
+.comment::before {
+    content: "| \f075";
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    padding-right: 5px;
+}
