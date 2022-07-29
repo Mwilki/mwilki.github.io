@@ -66,14 +66,15 @@ class Play {
         // add buttons if mobile
         if (!this.sys.game.device.os.desktop){
             this.addMobileInputs();
+
+            this.rotateLabel = this.add.text(250, 170, '', { font: '30px Geo', fill: "#fff", backgroundColor: '#000' });
+            this.rotateLabel.setOrigin(0.5, 0.5);
+
+            // phaser function scale calls our method whenever device is rotated
+            this.scale.on('orientationchange', this.orientationChange, this);
+            this.orientationChange();
         }
 
-        this.rotateLabel = this.add.text(250, 170, '', {font: '30px Geo', fill: "#fff", backgroundColor: '#000'});
-        this.rotateLabel.setOrigin(0.5, 0.5);
-
-        // phaser function scale calls our method whenever device is rotated
-        this.scale.on('orientationchange', this.orientationChange, this);
-        this.orientationChange();
 
         // phaser only handles one pointer by default.  add one extra pointer (2 in total)
         this.input.addPointer(1);
