@@ -64,7 +64,7 @@ class Play {
         });
 
         // add buttons if mobile
-        if (!this.sys.game.device.os.desktop){
+        if (this.sys.game.device.os.desktop){
             this.addMobileInputs();
 
             this.rotateLabel = this.add.text(250, 170, '', { font: '30px Geo', fill: "#fff", backgroundColor: '#000' });
@@ -242,18 +242,18 @@ class Play {
         this.moveLeft = false;
         this.moveRight = false;
 
-        let jumpButton = this.add.sprite(400, 290, 'jumpButton');
+        let jumpButton = this.add.sprite(470, 390, 'jumpButton');
         jumpButton.setInteractive();
         jumpButton.alpha = 0.5; // transparent
         jumpButton.on('pointerdown', this.jumpPlayer, this);
 
-        let leftButton = this.add.sprite(100, 290, 'leftButton');
+        let leftButton = this.add.sprite(30, 390, 'leftButton');
         leftButton.setInteractive();
         leftButton.alpha = 0.5; // transparent
         leftButton.on('pointerover', () => this.moveLeft = true, this);
         leftButton.on('pointerout', () => this.moveLeft = false, this);
 
-        let rightButton = this.add.sprite(180, 290, 'rightButton');
+        let rightButton = this.add.sprite(110, 390, 'rightButton');
         rightButton.setInteractive();
         rightButton.alpha = 0.5; // transparent
         rightButton.on('pointerover', () => this.moveRight = true, this);
