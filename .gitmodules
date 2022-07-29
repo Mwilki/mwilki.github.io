@@ -1,3 +1,4 @@
 [submodule "CoinBox"]
 	path = CoinBox
-	url = https://mwilki.github.io/
+	url = mwilki.github.io
+
