@@ -44,11 +44,13 @@ class Menu {
         });
 
         // store up key
-        this.upKey = this.input.keyboard.addKey('up');
+        this.keys = this.input.keyboard.addKeys({
+            up: Phaser.Input.Keyboard.KeyCodes.W
+        });
     }
 
     update(){
-        if (this.upKey.isDown || (!this.sys.game.device.os.desktop && this.input.activePointer.isDown)){
+        if (this.keys.up.isDown || (!this.sys.game.device.os.desktop && this.input.activePointer.isDown)){
             this.scene.start('play');
         }
     }

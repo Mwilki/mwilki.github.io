@@ -19,8 +19,13 @@ class Play {
             repeat: -1
         });
 
-        // arrow
-        this.arrow = this.input.keyboard.createCursorKeys();
+        this.keys = this.input.keyboard.addKeys({
+            up: Phaser.Input.Keyboard.KeyCodes.W,
+            down: Phaser.Input.Keyboard.KeyCodes.S,
+            left: Phaser.Input.Keyboard.KeyCodes.A,
+            right: Phaser.Input.Keyboard.KeyCodes.D
+        });
+
         this.createWorld();
 
         // coin
@@ -125,10 +130,10 @@ class Play {
     }
 
     movePlayer(){
-        if (this.arrow.left.isDown || this.moveLeft){
+        if (this.keys.left.isDown || this.moveLeft){
             this.player.body.velocity.x = -200;
             this.player.anims.play('left', true);
-        } else if (this.arrow.right.isDown || this.moveRight){
+        } else if (this.keys.right.isDown || this.moveRight){
             this.player.body.velocity.x = 200;
             this.player.anims.play('right', true);
         } else {
@@ -136,7 +141,7 @@ class Play {
             this.player.setFrame(0);
         }
 
-        if (this.arrow.up.isDown && this.player.body.onFloor()){
+        if (this.keys.up.isDown && this.player.body.onFloor()){
             this.jumpPlayer();
         }
     }
